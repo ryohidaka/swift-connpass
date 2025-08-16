@@ -22,7 +22,10 @@ let package = Package(
             name: "connpass"),
         .testTarget(
             name: "connpassTests",
-            dependencies: ["connpass"]
+            dependencies: ["connpass"],
+            resources: [
+                .process("__fixtures__")
+            ],
         ),
     ]
 )
