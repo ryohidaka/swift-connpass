@@ -36,3 +36,22 @@ public class Connpass {
         self.session = URLSession(configuration: configuration ?? .default)
     }
 }
+
+// MARK: 共通リクエスト
+
+extension Connpass {
+    /// 内部用: 汎用的に API を呼び出し、指定型にデコード
+    /// 外部から直接呼び出す必要はない
+    /// - Parameters:
+    ///   - endpoint: API エンドポイント
+    ///   - queryStruct: クエリ構造体（任意）
+    /// - Returns: 指定型にデコードされた結果
+    private func request<T: Decodable>(
+        endpoint: String,
+        queryStruct: Any? = nil
+    ) async throws -> T {
+        let urlRequest = try ConnpassRequest.makeRequest(
+            client: self, endpoint: endpoint, queryStruct: queryStruct)
+        return try await ConnpassRequest.fetch(request: urlRequest, session: session, type: T.self)
+    }
+}

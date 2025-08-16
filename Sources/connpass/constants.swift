@@ -9,4 +9,7 @@
 public struct ConnpassConstants {
     // Connpass API のエンドポイントベースURL
     public static let baseURL = "https://connpass.com/api/v2"
+
+    // APIキーを指定するヘッダー名
+    public static let apiKeyHeaderField = "X-API-Key"
 }
