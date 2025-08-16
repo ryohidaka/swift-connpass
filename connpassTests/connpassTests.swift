@@ -1,12 +1,13 @@
 //
 //  connpassTests.swift
 //  connpassTests
-//  
+//
 //  Created by ryohidaka on 2025/08/16
-//  
+//
 //
 
 import Testing
+
 @testable import connpass
 
 struct connpassTests {
