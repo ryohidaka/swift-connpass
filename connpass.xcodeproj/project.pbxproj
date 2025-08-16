@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F18BA452E502D0F0052C67C /* connpass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F18BA392E502D0E0052C67C /* connpass.framework */; };
+		7F18BA912E5038A60052C67C /* .swift-format in Resources */ = {isa = PBXBuildFile; fileRef = 7F18BA902E5038A00052C67C /* .swift-format */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		7F18BA392E502D0E0052C67C /* connpass.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = connpass.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F18BA442E502D0F0052C67C /* connpassTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = connpassTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F18BA902E5038A00052C67C /* .swift-format */ = {isa = PBXFileReference; lastKnownFileType = text; path = ".swift-format"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -60,6 +62,7 @@
 		7F18BA2F2E502D0E0052C67C = {
 			isa = PBXGroup;
 			children = (
+				7F18BA902E5038A00052C67C /* .swift-format */,
 				7F18BA3B2E502D0E0052C67C /* connpass */,
 				7F18BA482E502D0F0052C67C /* connpassTests */,
 				7F18BA3A2E502D0E0052C67C /* Products */,
@@ -96,6 +99,7 @@
 				7F18BA352E502D0E0052C67C /* Sources */,
 				7F18BA362E502D0E0052C67C /* Frameworks */,
 				7F18BA372E502D0E0052C67C /* Resources */,
+				7F18BA8F2E5038250052C67C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -177,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F18BA912E5038A60052C67C /* .swift-format in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +193,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7F18BA8F2E5038250052C67C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nTARGET_DIR=\"$SRCROOT/connpass\"\n\nif xcrun --find swift-format >/dev/null; then\n  xcrun swift-format format --in-place --recursive \"$TARGET_DIR\"\n  xcrun swift-format lint --recursive \"$TARGET_DIR\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7F18BA352E502D0E0052C67C /* Sources */ = {
