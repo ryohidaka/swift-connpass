@@ -55,3 +55,22 @@ extension Connpass {
         return try await ConnpassRequest.fetch(request: urlRequest, session: session, type: T.self)
     }
 }
+
+// MARK: イベント一覧取得
+
+extension Connpass {
+    /// 検索クエリの条件に応じたイベント一覧を取得する
+    ///
+    /// - Parameter query: イベント検索クエリ構造体（省略可能）
+    /// - Returns: EventsResponse 型のレスポンス
+    /// - Throws: リクエストやデコードで失敗した場合にエラーを返す
+    ///
+    /// 例:
+    /// ```swift
+    /// let response = try await client.getEvents()
+    /// print(response.events)
+    /// ```
+    public func getEvents(query: EventsQuery = EventsQuery()) async throws -> EventsResponse {
+        try await request(endpoint: "events", queryStruct: query)
+    }
+}
