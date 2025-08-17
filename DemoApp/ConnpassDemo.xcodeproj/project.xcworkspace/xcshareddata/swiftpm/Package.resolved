@@ -1,0 +1,15 @@
+{
+  "originHash" : "292de4e250198f505b6cfb7494dabeb4438a77e52a75fe1c3acfa589a6623569",
+  "pins" : [
+    {
+      "identity" : "swift-connpass",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ryohidaka/swift-connpass.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "94f968995287b4b23d4a62d320067947542b7163"
+      }
+    }
+  ],
+  "version" : 3
+}
